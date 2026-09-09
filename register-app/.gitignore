@@ -1,0 +1,3 @@
+config.json
+exports/*.xlsx
+__pycache__/

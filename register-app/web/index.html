@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temporary Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h1>Temporary Register</h1>
+      <p class="intro">Complete the register, then export it as an Excel file.</p>
+      <form id="register-form">
+        <div class="details">
+          <label>Class <input id="className" required placeholder="e.g. Year 5 Blue"></label>
+          <label>Date <input id="date" type="date" required></label>
+          <label>Teacher <input id="teacher" required placeholder="Your name"></label>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Student name</th><th>Status</th><th>Arrival time</th><th>Notes</th><th></th></tr></thead>
+            <tbody id="student-rows"></tbody>
+          </table>
+        </div>
+        <button type="button" class="secondary" id="add-student">Add student</button>
+        <div class="actions">
+          <p id="feedback" role="status"></p>
+          <button type="submit" id="submit">Export Excel register</button>
+        </div>
+      </form>
+      <aside class="email-note">
+        <strong>After exporting</strong>
+        <p>Attach the downloaded Excel file to an email and send it to <a href="mailto:ala.elkurd@morleycollege.ac.uk">ala.elkurd@morleycollege.ac.uk</a>.</p>
+      </aside>
+    </section>
+  </main>
+  <template id="student-row">
+    <tr>
+      <td><input class="student-name" aria-label="Student name" placeholder="Student name"></td>
+      <td><select class="student-status" aria-label="Status"><option>Present</option><option>Absent</option><option>Late</option></select></td>
+      <td><input class="student-time" type="time" aria-label="Arrival time"></td>
+      <td><input class="student-notes" aria-label="Notes" placeholder="Optional"></td>
+      <td><button type="button" class="remove" aria-label="Remove student">Remove</button></td>
+    </tr>
+  </template>
+  <script src="app.js?v=4"></script>
+</body>
+</html>
